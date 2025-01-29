@@ -36,16 +36,32 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div id="app">
         <h1>Software Engineering Facts</h1>
         <ul id="facts-list"></ul>
+        <button id="replace-facts">Replace Facts</button>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const facts = [
+            const factsList = document.getElementById('facts-list');
+            const replaceButton = document.getElementById('replace-facts');
+
+            const initialFacts = [
                 {
                     "fact": "Software engineering involves the use of programming languages, frameworks, and tools to build software applications."
                 },
@@ -60,7 +76,10 @@
                 },
                 {
                     "fact": "The field includes various roles such as front-end developer, back-end developer, full-stack developer, and DevOps engineer."
-                },
+                }
+            ];
+
+            const newFacts = [
                 {
                     "fact": "Software engineering requires a strong understanding of algorithms and data structures to solve complex problems efficiently."
                 },
@@ -78,12 +97,19 @@
                 }
             ];
 
-            const factsList = document.getElementById('facts-list');
+            function displayFacts(facts) {
+                factsList.innerHTML = '';
+                facts.forEach(item => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = item.fact;
+                    factsList.appendChild(listItem);
+                });
+            }
 
-            facts.forEach(item => {
-                const listItem = document.createElement('li');
-                listItem.textContent = item.fact;
-                factsList.appendChild(listItem);
+            displayFacts(initialFacts);
+
+            replaceButton.addEventListener('click', () => {
+                displayFacts(newFacts);
             });
         });
     </script>
