@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #e2e2e2;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Software Engineering Facts</h1>
+        <ul id="facts-list"></ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const facts = [
+                {
+                    "fact": "Software engineering involves the use of programming languages, frameworks, and tools to build software applications."
+                },
+                {
+                    "fact": "It encompasses various phases such as requirements gathering, design, coding, testing, deployment, and maintenance."
+                },
+                {
+                    "fact": "Agile and DevOps are popular methodologies in software engineering that emphasize iterative development and collaboration."
+                },
+                {
+                    "fact": "Software engineers often use version control systems like Git to manage code changes and collaborate with team members."
+                },
+                {
+                    "fact": "The field includes various roles such as front-end developer, back-end developer, full-stack developer, and DevOps engineer."
+                },
+                {
+                    "fact": "Software engineering requires a strong understanding of algorithms and data structures to solve complex problems efficiently."
+                },
+                {
+                    "fact": "Continuous integration and continuous deployment (CI/CD) are practices that help automate testing and deployment processes."
+                },
+                {
+                    "fact": "Software engineers must stay updated with the latest technologies and trends to remain competitive in the industry."
+                },
+                {
+                    "fact": "Security is a critical aspect of software engineering, requiring engineers to implement measures to protect applications from vulnerabilities."
+                },
+                {
+                    "fact": "Software engineering can be applied to various domains, including web development, mobile app development, artificial intelligence, and embedded systems."
+                }
+            ];
+
+            const factsList = document.getElementById('facts-list');
+
+            facts.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item.fact;
+                factsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
